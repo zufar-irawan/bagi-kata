@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'username', 'email', 'password'])]
+#[Fillable(['name', 'username', 'photo_profile', 'email', 'password', 'bio'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -29,5 +29,20 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Posts::class);
+    }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorites::class);
+    }
+
+    public function favoritePosts()
+    {
+        return $this->belongsToMany(Posts::class, 'favorites', 'user_id', 'post_id');
     }
 }

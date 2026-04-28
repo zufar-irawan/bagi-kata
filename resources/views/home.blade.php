@@ -1,22 +1,9 @@
-<div class="p-6 flex flex-col gap-2">
-    <a href="/new">New Post</a>
+<x-layouts::app>
+    <x-slot:title>
+        Beranda - Bagi Kata
+    </x-slot:title>
 
-    @guest
-    <a href="/login">Login</a>
-    <a href="/register">Register</a>
-    @endguest
-
-    @auth
-        <form method="POST" action="/logout">
-            @csrf
-            <button type="submit">Logout</button>
-        </form>
-    @endauth
-
-    <hr>
-
-    @foreach ($posts as $post)
-        <p>{{ $post->text_content }}</p>
-        <a href={{ '/post/' . $post->id }}>Lihat</a>
-    @endforeach
-</div>
+    <flux:main>
+        <livewire:home-feed />
+    </flux:main>
+</x-layouts::app>

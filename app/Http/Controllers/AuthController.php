@@ -61,7 +61,7 @@ class AuthController extends Controller
 
         return back()->withErrors([
             'login' => 'Login gagal. Cek username/email dan password.',
-        ])->onlyInput('login');
+        ])->onlyInput();
     }
 
     public function logout(Request $request)

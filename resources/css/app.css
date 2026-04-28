@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,6 +7,19 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-accent: #2c97f0;
+    --color-accent-content: #1f85d6;
+    --color-accent-foreground: var(--color-white);
 }
+
+@layer base {
+    .dark {
+        --color-accent: #2c97f0;
+        --color-accent-content: #2c97f0;
+        --color-accent-foreground: var(--color-white);
+    }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
