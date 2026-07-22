@@ -2,6 +2,9 @@
 
 Media sosial berbasis web yang terinspirasi dari konsep microblogging seperti Twitter. Proyek ini dibangun menggunakan Laravel dan Livewire secara hybrid, dengan Flux UI untuk mempercepat pengembangan antarmuka.
 
+### DEMO APP ->
+https://bagikata.freedev.app/
+
 ## Fitur Utama
 
 - Timeline postingan dengan interaksi sosial (like, favorit, tag)
